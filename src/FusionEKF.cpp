@@ -42,6 +42,11 @@ FusionEKF::FusionEKF() {
              0,1,0,0;
 
 
+  //Jacobian measurment for Radar
+  Hj_ << 1,1,0,0,
+  		 1,1,0,0,
+  		 1,1,1,1;           
+
   //Now the transition matrix F
   ekf_.F_ = MatrixXd(4,4);
   ekf_.F_ << 1,0,1,0,
@@ -146,14 +151,32 @@ void FusionEKF::ProcessMeasurement(const MeasurementPackage &measurement_pack) {
 
   /**
    TODO:
-     * Use the sensor type to perform the update step.
-     * Update the state and covariance matrices.
+     ||* Use the sensor type to perform the update step.
+      * Update the state and covariance matrices.
    */
 
+
+  /**
+  	We have to change the measurement Function (H) and noise (R) for the update
+  	from two types of sensors
+  	and then call the update function 
+  */
   if (measurement_pack.sensor_type_ == MeasurementPackage::RADAR) {
-    // Radar updates
+  	// Radar update..
+  	Tools tools;
+  	Hj_ = tools.CalculateJacobian(ekf_.x_);
+  	ekf_.H_ = Hj_;
+  	ekf_.R_ = R_radar_;
+  	ekf_.UpdateEKF(measurement_pack.raw_measurements_);
+  
   } else {
+    
     // Laser updates
+
+    ekf_.H_ = H_laser_; 
+    ekf_.R_ = R_laser_;
+    ekf_.Update(measurement_pack.raw_measurements_); // pass the measurment for update
+
   }
 
   // print the output
