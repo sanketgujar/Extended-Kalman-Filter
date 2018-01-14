@@ -12,7 +12,9 @@ In this project I utilized a kalman filter to estimate the state of a moving obj
 Here is a brief overview of what happens when you run the code files:
 
 Main.cpp reads in the data and sends a sensor measurement to FusionEKF.cpp
+
 FusionEKF.cpp takes the sensor data and initializes variables and updates variables. The Kalman filter equations are not in this file. FusionEKF.cpp has a variable called ekf_, which is an instance of a KalmanFilter class. The ekf_ instance holds the matrix and vector values and calls the predict and update equations.
+
 The KalmanFilter class is defined in kalman_filter.cpp and kalman_filter.h. 'kalman_filter.cpp' contains functions for the prediction and update steps.
 
 ## Dependencies
