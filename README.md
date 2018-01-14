@@ -1,9 +1,26 @@
 # Extended Kalman Filter Project 
-In this project I utilized a kalman filter to estimate the state of a moving object of interest with noisy lidar and radar measurements. 
+I utilized a kalman filter to estimate the state of a moving object of interest (bicycle that travels around the vehicle) with noisy lidar and radar measurements. 
 
 The Flow of my code is as shown below
 
 ![Alt text](/Output/f2.png?raw=true "Test 1")
+
+
+
+The 3 important steps are 
+
+1. Initializing the matrices    
+   On the first measurment we will update the state and covariance matrix.  
+
+2. Predict the state 
+   Compute the time elapsed between previous and current measurment.
+   Use the time difference to compute the state and covariance matrix.
+   Predict the new state and covariance 
+   
+3. Update the state 
+   If the measurement is from Laser, set up the Laser matrices and update the new measurment.
+   If the measurement is from Radar, convert to linear, set up the Radar matrices and update the new measurement.
+
 
 
 ## Testing the Kalaman Filter in Simulator. 
