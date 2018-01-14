@@ -1,14 +1,16 @@
 # Extended Kalman Filter Project 
 In this project I utilized a kalman filter to estimate the state of a moving object of interest with noisy lidar and radar measurements. 
 
-# Tesiting the Kalaman Filter in Simulator. 
+## Testing the Kalaman Filter in Simulator. 
+
+Lidar measurements are red circles, radar measurements are blue circles with an arrow pointing in the direction of the observed angle, and estimation markers are green triangles.
 
 ![Alt text](/Output/1.gif?raw=true "Test 1")
 
 ![Alt text](/Output/2.gif?raw=true "Test 1")
 
 
-# How the Files Relate to Each Other
+## How the Files Relate to Each Other
 Here is a brief overview of what happens when you run the code files:
 
 Main.cpp reads in the data and sends a sensor measurement to FusionEKF.cpp
