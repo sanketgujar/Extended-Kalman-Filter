@@ -1,6 +1,8 @@
 # Extended Kalman Filter Project 
 I utilized a kalman filter to estimate the state of a moving object of interest (bicycle that travels around the vehicle) with noisy lidar and radar measurements. 
 
+Please checkout reference.pdf for Equations used in the code.
+
 The Flow of my code is as shown below
 
 ![Alt text](/Output/f2.png?raw=true "Test 1")
