@@ -1,6 +1,11 @@
 # Extended Kalman Filter Project 
 In this project I utilized a kalman filter to estimate the state of a moving object of interest with noisy lidar and radar measurements. 
 
+The Flow of my code is as shown below
+
+![Alt text](/Output/f2.png?raw=true "Test 1")
+
+
 ## Testing the Kalaman Filter in Simulator. 
 
 Lidar measurements are red circles, radar measurements are blue circles with an arrow pointing in the direction of the observed angle, and estimation markers are green triangles.
