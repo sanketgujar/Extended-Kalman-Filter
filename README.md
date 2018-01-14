@@ -1,7 +1,7 @@
 # Extended Kalman Filter Project 
 In this project I utilized a kalman filter to estimate the state of a moving object of interest with noisy lidar and radar measurements. 
 
-![Alt text](/Output/ezgif.com-video-to-gif(1).gif?raw=true "Test 1")
+![Alt text](Output/ezgif.com-video-to-gif(1).gif?raw=true "Test 1")
 
 ## Dependencies
 
