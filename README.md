@@ -5,7 +5,7 @@ Please checkout reference.pdf for Equations used in the code.
 
 The Flow of my code is as shown below
 
-![Alt text](https://github.com/sanketgujar/Extended-Kalman-Filter/blob/master/Output/f2.png)
+![Alt text](https://raw.github.com/sanketgujar/Extended-Kalman-Filter/blob/master/Output/f2.png)
 
 
 
