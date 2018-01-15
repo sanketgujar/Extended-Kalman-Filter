@@ -7,7 +7,7 @@ The Flow of my code is as shown below
 
 //![Alt text](https://raw.githubuser.com/sanketgujar/Extended-Kalman-Filter/blob/master/Output/f2.png)
 <p>
-    <img src="/Output/f2.png" width="220" height="240" />
+    <img src="/Output/f2.png" width="600" height="400" />
 </p>
 
 
