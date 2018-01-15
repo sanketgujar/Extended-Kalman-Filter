@@ -33,9 +33,9 @@ The 3 important steps are
 
 Lidar measurements are red circles, radar measurements are blue circles with an arrow pointing in the direction of the observed angle, and estimation markers are green triangles.
 
-![Alt text](Output/1.gif?raw=true "Optional Title")
+![Alt text](Output/1.gif?raw=true "Optional Title 1")
 
-![Alt text](Output/2.gif?raw=true "Optional Title")
+![Alt text](Output/2.gif?raw=true "Optional Title 2")
 
 
 ## How the Files Relate to Each Other
