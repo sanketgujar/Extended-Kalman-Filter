@@ -5,7 +5,7 @@ Please checkout reference.pdf for Equations used in the code.
 
 The Flow of my code is as shown below
 
-//![Alt text](https://raw.githubuser.com/sanketgujar/Extended-Kalman-Filter/blob/master/Output/f2.png)
+//![Alt text](https://githubuser.com/sanketgujar/Extended-Kalman-Filter/blob/master/Output/f2.png)
 <p>
     <img src="/Output/f2.png" width="600" height="400" />
 </p>
