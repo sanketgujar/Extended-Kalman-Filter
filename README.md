@@ -5,10 +5,6 @@ Please checkout reference.pdf for Equations used in the code.
 
 The Flow of my code is as shown below
 ![Alt text](Output/f2.png?raw=true "Optional Title")
-![Alt text](https://github.com/sanketgujar/Extended-Kalman-Filter/blob/master/Output/f2.png)
-<p>
-    <img src="https://github.com/sanketgujar/Extended-Kalman-Filter/blob/master/Output/f2.png" width="600" height="400" />
-</p>
 
 
 The 3 important steps are 
