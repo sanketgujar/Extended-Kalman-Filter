@@ -15,4 +15,4 @@ public:
   Eigen::VectorXd raw_measurements_;
 };
 
-#endif /* MEASUREMENT_PACKAGE_H_ */
+#endif

@@ -7,12 +7,8 @@
 
 using namespace std;
 
-// for convenience
 using json = nlohmann::json;
 
-// Checks if the SocketIO event has JSON data.
-// If there is data the JSON object in string format will be returned,
-// else the empty string "" will be returned.
 std::string hasData(std::string s) {
   auto found_null = s.find("null");
   auto b1 = s.find_first_of("[");
@@ -28,21 +24,14 @@ std::string hasData(std::string s) {
 
 int main()
 {
+
   uWS::Hub h;
-
-  // Create a Kalman Filter instance
   FusionEKF fusionEKF;
-
-  // used to compute the RMSE later
   Tools tools;
   vector<VectorXd> estimations;
   vector<VectorXd> ground_truth;
 
   h.onMessage([&fusionEKF,&tools,&estimations,&ground_truth](uWS::WebSocket<uWS::SERVER> ws, char *data, size_t length, uWS::OpCode opCode) {
-    // "42" at the start of the message means there's a websocket message event.
-    // The 4 signifies a websocket message
-    // The 2 signifies a websocket event
-
     if (length && length > 2 && data[0] == '4' && data[1] == '2')
     {
 
@@ -54,7 +43,6 @@ int main()
         std::string event = j[0].get<std::string>();
         
         if (event == "telemetry") {
-          // j[1] is the data JSON object
           
           string sensor_measurment = j[1]["sensor_measurement"];
           
@@ -62,7 +50,6 @@ int main()
           istringstream iss(sensor_measurment);
     	  long long timestamp;
 
-    	  // reads first element from the current line
     	  string sensor_type;
     	  iss >> sensor_type;
 
@@ -105,11 +92,7 @@ int main()
     	  gt_values(3) = vy_gt;
     	  ground_truth.push_back(gt_values);
           
-          //Call ProcessMeasurment(meas_package) for Kalman filter
     	  fusionEKF.ProcessMeasurement(meas_package);    	  
-
-    	  //Push the current estimated x,y positon from the Kalman filter's state vector
-
     	  VectorXd estimate(4);
 
     	  double p_x = fusionEKF.ekf_.x_(0);
@@ -147,8 +130,6 @@ int main()
 
   });
 
-  // We don't need this since we're not using HTTP but if it's removed the program
-  // doesn't compile :-(
   h.onHttpRequest([](uWS::HttpResponse *res, uWS::HttpRequest req, char *data, size_t, size_t) {
     const std::string s = "<h1>Hello world!</h1>";
     if (req.getUrl().valueLength == 1)
@@ -157,7 +138,6 @@ int main()
     }
     else
     {
-      // i guess this should be done more gracefully?
       res->end(nullptr, 0);
     }
   });
